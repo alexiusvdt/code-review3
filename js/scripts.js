@@ -1,4 +1,4 @@
-//ui logik
+//ui 
 window.addEventListener("load", function() {
   document.querySelector("form#counter").addEventListener("submit", handleFormSubmission);
 });
@@ -7,15 +7,11 @@ function handleFormSubmission() {
   event.preventDefault();
   resetResults();
   let neighborName = document.getElementById("name").value;
-  console.log('whats ur name', neighborName);
   let countTo = document.getElementById("count-to").value;
   let isValidInput = validInput(countTo);
-  console.log("regex match", isValidInput);
     if (isValidInput === true) {
       let inputArray = userInputArray(countTo);
-      // console.log("beginning beep boopification")
       let outputArray = beepBooper(inputArray, neighborName);
-      // console.log("beeps = booped, output:", outputArray);
       printToUser(outputArray, neighborName);
     } else {
       let p = document.createElement("p");
@@ -49,15 +45,15 @@ function resetResults() {
 }
 
 
-//business logik
+//business 
 
 function validInput(countTo) {
   let regexTest = /\D/g;
-  if (regexTest.test(countTo) === false) {
-    return true
-  } else {
-    return false
-  }
+    if (regexTest.test(countTo) === false) {
+      return true
+    } else {
+      return false
+    }
 }
 
 function userInputArray(countTo) {
@@ -71,21 +67,17 @@ function userInputArray(countTo) {
 
 function beepBooper (inputArray, neighborName) {
   let outputArray = [];
-  // console.log('beepboop begins, heres the userarray', inputArray);
   for (let i = 0; i < inputArray.length; i++) {
     let element = i.toString();
-    if (element.includes(3)) {
-      outputArray.push("Won't you be my neighbor, " + neighborName + "?");
-      // console.log("element contains 3!", i);
-    } else if (element.includes(2)) {
-      // console.log("element contains a 2!", i);
-      outputArray.push("Boop!");
-    } else if (element.includes(1)) {
-      // console.log("element contains a 1!", i);
-      outputArray.push("Beep!")
-    } else {
-      outputArray.push(element);
+      if (element.includes(3)) {
+        outputArray.push("Won't you be my neighbor, " + neighborName + "?");
+      } else if (element.includes(2)) {
+        outputArray.push("Boop!");
+      } else if (element.includes(1)) {
+        outputArray.push("Beep!")
+      } else {
+        outputArray.push(element);
+      }
     }
-  }
   return outputArray
 }

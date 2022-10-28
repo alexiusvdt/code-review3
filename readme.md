@@ -1,4 +1,4 @@
-# Mr. Roboger's'Neighborhood
+# Mr. Robogers' Neighborhood
 
 #### By Alex Johnson
 
@@ -66,8 +66,9 @@ Expected output: (false), (true)
 ## Additional thanks
 
 * W3 schools
+* coffee
+* Richard Garfield, PhD
 * developer.mozilla.org
-* mdbootstrap.com
 * Susuwatari - feline debugger extraordinaire and moral support
 
 
