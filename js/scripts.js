@@ -5,8 +5,9 @@ window.addEventListener("load", function() {
 
 function handleFormSubmission() {
   event.preventDefault();
+  resetResults();
   let countTo = document.getElementById("count-to").value;
-  const inputArray = userInputArray(countTo);
+  let inputArray = userInputArray(countTo);
   // console.log("beginning beep boopification")
   let outputArray = beepBooper(inputArray);
   // console.log("beeps = booped, output:", outputArray);
@@ -14,17 +15,31 @@ function handleFormSubmission() {
 }
 
 function printToUser(outputArray) {
-  const p = document.createElement("p");
-  const h2 = document.createElement("h2");
-  const h4 = document.createElement("h4");
+  let p = document.createElement("p");
+  let h2 = document.createElement("h2");
+  let h4 = document.createElement("h4");
+  p.className = "display"
+  h2.className = "display"
+  h4.className = "display"
   outputArray = outputArray.join(", ");
   p.append(outputArray);
-  h2.append("Thanks for the input, neighbor!")
-  h4.append("Here's what I've got for you:")
-  document.getElementById("results-div").append(h2);
-  document.getElementById("results-div").appendChild(h4);
-  document.getElementById("results-div").appendChild(p);
+  h2.append("Thanks for the input, neighbor!");
+  h4.append("Here's what I've got for you:");
+  document.getElementById("results-span").append(h2);
+  document.getElementById("results-span").appendChild(h4);
+  document.getElementById("results-span").appendChild(p);
+  document.getElementById("results-div").removeAttribute("class");
 }
+
+function resetResults() {
+  document.getElementById("results-div").setAttribute("class", "hidden");
+  let inputArray = [];
+  let outputArray = [];
+  let span = document.getElementsByClassName("display");
+  span.innerHTML = '';
+  return inputArray, outputArray;
+}
+
 
 //business logik
 let outputArray = [];
@@ -44,12 +59,12 @@ function beepBooper (inputArray) {
     let element = i.toString();
     if (element.includes(3)) {
       outputArray.push("Won't you be my neighbor?");
-      console.log("element contains 3!", i);
+      // console.log("element contains 3!", i);
     } else if (element.includes(2)) {
-      console.log("element contains a 2!", i);
+      // console.log("element contains a 2!", i);
       outputArray.push("Boop!");
     } else if (element.includes(1)) {
-      console.log("element contains a 1!", i);
+      // console.log("element contains a 1!", i);
       outputArray.push("Beep!")
     } else {
       outputArray.push(element);
