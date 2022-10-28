@@ -7,12 +7,20 @@ function handleFormSubmission() {
   event.preventDefault();
   let countTo = document.getElementById("count-to").value;
   const inputArray = userInputArray(countTo);
-  console.log("beginning beep boopification")
+  // console.log("beginning beep boopification")
   let outputArray = beepBooper(inputArray);
-  console.log("beeps have booped, here's the output", outputArray);
+  // console.log("beeps = booped, output:", outputArray);
+  printToUser(outputArray);
 }
 
-
+function printToUser(outputArray) {
+  const p = document.createElement("p");
+  const h2 = document.createElement("h2");
+  p.append(outputArray);
+  h2.append("Thanks for the input, neighbor!")
+  // document.getElementById("results-div").append(h2);
+  document.getElementById("results-div").append(p);
+}
 
 //business logik
 let outputArray = [];
