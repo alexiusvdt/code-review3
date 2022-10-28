@@ -30,12 +30,15 @@ function beepBooper (inputArray) {
   console.log('beepboop begins, heres the userarray', inputArray);
   for (let i = 0; i < inputArray.length; i++) {
     let element = i.toString();
-    if (element.includes(2)) {
+    if (element.includes(3)) {
+      outputArray.push("Won't you be my neighbor?");
+      console.log("element contains 3!", i);
+    } else if (element.includes(2)) {
+      console.log("element contains a 2!", i);
       outputArray.push("Boop!");
-      console.log("element contains 2!", i);
     } else if (element.includes(1)) {
       console.log("element contains a 1!", i);
-      outputArray.push("Beep!");
+      outputArray.push("Beep!")
     } else {
       outputArray.push(element);
     }

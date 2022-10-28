@@ -39,7 +39,19 @@ Test: "it should replace inputs containing 2's with "Boop!"
 Code: beepBooper(inputArray), inputArray = [0 through 12]
 Expected output: [0, "Beep!", "Boop!", 3, 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!"]
 
+Test: "It should replace inputs containing 3's with "Won't you be my neighbor?"
+Code: beepBooper(inputArray), inputArray = [0 through 13] 
+Expected output = [0, "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!", "Won't you be my neighbor?"]
 
+
+NOTE: hierarchy rules in assignment are as follows:
+  * 3 takes precedence over 2 & 1
+  * 2 takes precedence over 1
+  * 1 is lowest priority
+That is:  13 -> "...my neighbor?"
+          12 -> "Boop!"
+          23 -> "...my neighbor?"
+          21 -> "Boop!"
 
 ## Known Bugs
 
