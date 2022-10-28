@@ -23,14 +23,17 @@ Check out the live [github pages site](https://alexiusvdt.github.io/code-review2
 * Open index.html in your browser.
 
 ## TESTS
-Describe: beepBoop()
+Describe: userInputArray()
 
 Test: "It should return an array of numbers from 0 to the user's inputted number"
-code: beepBoop(5)
+Code: userInputArray(5)
 Expected Output: [0, 1, 2, 3, 4, 5]
 
+Describe: beepBooper()
 
-
+Test: "It should replace inputs containing 1's with "beep"
+Code: beepBooper(inputArray), inputArray = [0 through 11]
+Expected output: [0, "Beep!", 2, 3, 4, 5, 6, 7, 8, 9, "Beep!", "Beep!"]
 
 
 
