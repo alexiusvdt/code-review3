@@ -16,10 +16,14 @@ function handleFormSubmission() {
 function printToUser(outputArray) {
   const p = document.createElement("p");
   const h2 = document.createElement("h2");
+  const h4 = document.createElement("h4");
+  outputArray = outputArray.join(", ");
   p.append(outputArray);
   h2.append("Thanks for the input, neighbor!")
-  // document.getElementById("results-div").append(h2);
-  document.getElementById("results-div").append(p);
+  h4.append("Here's what I've got for you:")
+  document.getElementById("results-div").append(h2);
+  document.getElementById("results-div").appendChild(h4);
+  document.getElementById("results-div").appendChild(p);
 }
 
 //business logik
