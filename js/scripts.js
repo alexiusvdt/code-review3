@@ -7,12 +7,23 @@ function handleFormSubmission() {
   event.preventDefault();
   resetResults();
   let countTo = document.getElementById("count-to").value;
-  let inputArray = userInputArray(countTo);
-  // console.log("beginning beep boopification")
-  let outputArray = beepBooper(inputArray);
-  // console.log("beeps = booped, output:", outputArray);
-  printToUser(outputArray);
-}
+  let isValidInput = validInput(countTo);
+  console.log("regex match", isValidInput);
+    if (isValidInput === true) {
+      let inputArray = userInputArray(countTo);
+      // console.log("beginning beep boopification")
+      let outputArray = beepBooper(inputArray);
+      // console.log("beeps = booped, output:", outputArray);
+      printToUser(outputArray);
+    } else {
+      let p = document.createElement("p");
+      let span = document.createElement("span")
+      document.getElementById("results-div").appendChild(span);
+      span.id = "results-span";
+      p.append("ERROR: Mr. Roboger can only handle input of values 0-9, please try again without text, whitespace, or characters!");
+      document.getElementById("results-span").appendChild(p);
+    }
+  }
 
 function printToUser(outputArray) {
   let p = document.createElement("p");
@@ -36,16 +47,21 @@ function printToUser(outputArray) {
 }
 
 function resetResults() {
-  //need to delete the elements!
   const element = document.getElementById("results-span");
   element.remove();
-  // let inputArray = [];
-  // let outputArray = [];
-    // return inputArray, outputArray;
 }
 
 
 //business logik
+
+function validInput(countTo) {
+  let regexTest = /\D/g;
+  if (regexTest.test(countTo) === false) {
+    return true
+  } else {
+    return false
+  }
+}
 
 function userInputArray(countTo) {
   inputArray = [];

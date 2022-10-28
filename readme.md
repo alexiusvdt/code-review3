@@ -43,7 +43,11 @@ Test: "It should replace inputs containing 3's with "Won't you be my neighbor?"
 Code: beepBooper(inputArray), inputArray = [0 through 13] 
 Expected output = [0, "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!", "Won't you be my neighbor?"]
 
+Describe validInput(countTo)
+
 Test: "users must enter a number for the program to work"
+Code: isNum (banana); isNum(193);
+Expected output: (false), (true)
 
 
 NOTE: hierarchy rules in assignment are as follows:
