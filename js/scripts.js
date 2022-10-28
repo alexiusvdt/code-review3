@@ -42,10 +42,9 @@ function resetResults() {
 
 
 //business logik
-let outputArray = [];
-let inputArray = [];
 
 function userInputArray(countTo) {
+  inputArray = [];
   let indexLength = parseInt(countTo);
     for (let i = 0; i <= indexLength; i++) {
     inputArray.push(i);
@@ -54,6 +53,7 @@ function userInputArray(countTo) {
 } 
 
 function beepBooper (inputArray) {
+  let outputArray = [];
   console.log('beepboop begins, heres the userarray', inputArray);
   for (let i = 0; i < inputArray.length; i++) {
     let element = i.toString();
