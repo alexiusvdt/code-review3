@@ -23,7 +23,7 @@ function handleFormSubmission() {
       p.append("ERROR: Mr. Roboger can only handle input of values 0-9, please try again without text, whitespace, or characters!");
       document.getElementById("results-span").appendChild(p);
     }
-  }
+}
 
 function printToUser(outputArray) {
   let p = document.createElement("p");
@@ -32,10 +32,6 @@ function printToUser(outputArray) {
   let span = document.createElement("span")
   document.getElementById("results-div").appendChild(span);
   span.id = "results-span";
-  
-  // p.className = "display";
-  // h2.className = "display";
-  // h4.className = "display";
   outputArray = outputArray.join(", ");
   p.append(outputArray);
   h2.append("Thanks for the input, neighbor!");
@@ -43,7 +39,6 @@ function printToUser(outputArray) {
   document.getElementById("results-span").append(h2);
   document.getElementById("results-span").appendChild(h4);
   document.getElementById("results-span").appendChild(p);
-  document.getElementById("results-div").removeAttribute("class");
 }
 
 function resetResults() {

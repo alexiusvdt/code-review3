@@ -12,9 +12,16 @@
 <!-- * Bootstrap -->
 
 ## Description
-Won't you be my neighbor?
+Won't you be my neighbor? Mr. Roboger replaces numbers containing 1, 2, or 3 according to a specific hierarchy: 
+  * 3 takes precedence over 2 & 1
+  * 2 takes precedence over 1
+  * 1 is lowest priority
+That is:  13 -> "...my neighbor?"
+          12 -> "Boop!"
+          23 -> "...my neighbor?"
+          21 -> "Boop!"
 
-Check out the live [github pages site](https://alexiusvdt.github.io/code-review2/)
+Check out the live [github pages site](https://alexiusvdt.github.io/code-review3/)
 
 ## Setup/Installation Requirements
 
@@ -50,14 +57,7 @@ Code: isNum (banana); isNum(193);
 Expected output: (false), (true)
 
 
-NOTE: hierarchy rules in assignment are as follows:
-  * 3 takes precedence over 2 & 1
-  * 2 takes precedence over 1
-  * 1 is lowest priority
-That is:  13 -> "...my neighbor?"
-          12 -> "Boop!"
-          23 -> "...my neighbor?"
-          21 -> "Boop!"
+
 
 ## Known Bugs
 
