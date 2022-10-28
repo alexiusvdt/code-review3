@@ -18,9 +18,13 @@ function printToUser(outputArray) {
   let p = document.createElement("p");
   let h2 = document.createElement("h2");
   let h4 = document.createElement("h4");
-  p.className = "display"
-  h2.className = "display"
-  h4.className = "display"
+  let span = document.createElement("span")
+  document.getElementById("results-div").appendChild(span);
+  span.id = "results-span";
+  
+  // p.className = "display";
+  // h2.className = "display";
+  // h4.className = "display";
   outputArray = outputArray.join(", ");
   p.append(outputArray);
   h2.append("Thanks for the input, neighbor!");
@@ -32,12 +36,12 @@ function printToUser(outputArray) {
 }
 
 function resetResults() {
-  document.getElementById("results-div").setAttribute("class", "hidden");
-  let inputArray = [];
-  let outputArray = [];
-  let span = document.getElementsByClassName("display");
-  span.innerHTML = '';
-  return inputArray, outputArray;
+  //need to delete the elements!
+  const element = document.getElementById("results-span");
+  element.remove();
+  // let inputArray = [];
+  // let outputArray = [];
+    // return inputArray, outputArray;
 }
 
 
