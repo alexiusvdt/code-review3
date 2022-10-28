@@ -6,26 +6,28 @@ window.addEventListener("load", function() {
 function handleFormSubmission() {
   event.preventDefault();
   resetResults();
+  let neighborName = document.getElementById("name").value;
+  console.log('whats ur name', neighborName);
   let countTo = document.getElementById("count-to").value;
   let isValidInput = validInput(countTo);
   console.log("regex match", isValidInput);
     if (isValidInput === true) {
       let inputArray = userInputArray(countTo);
       // console.log("beginning beep boopification")
-      let outputArray = beepBooper(inputArray);
+      let outputArray = beepBooper(inputArray, neighborName);
       // console.log("beeps = booped, output:", outputArray);
-      printToUser(outputArray);
+      printToUser(outputArray, neighborName);
     } else {
       let p = document.createElement("p");
       let span = document.createElement("span")
       document.getElementById("results-div").appendChild(span);
       span.id = "results-span";
-      p.append("ERROR: Mr. Roboger can only handle input of values 0-9, please try again without text, whitespace, or characters!");
+      p.append("ERROR: Sorry " + neighborName + ", Mr. Roboger can only handle input of integer values from 0-9. Please try again without text, whitespace, or special characters!");
       document.getElementById("results-span").appendChild(p);
     }
 }
 
-function printToUser(outputArray) {
+function printToUser(outputArray, neighborName) {
   let p = document.createElement("p");
   let h2 = document.createElement("h2");
   let h4 = document.createElement("h4");
@@ -34,7 +36,7 @@ function printToUser(outputArray) {
   span.id = "results-span";
   outputArray = outputArray.join(", ");
   p.append(outputArray);
-  h2.append("Thanks for the input, neighbor!");
+  h2.append("Thanks for the input, " + neighborName + "!");
   h4.append("Here's what I've got for you:");
   document.getElementById("results-span").append(h2);
   document.getElementById("results-span").appendChild(h4);
@@ -67,13 +69,13 @@ function userInputArray(countTo) {
     return inputArray;
 } 
 
-function beepBooper (inputArray) {
+function beepBooper (inputArray, neighborName) {
   let outputArray = [];
-  console.log('beepboop begins, heres the userarray', inputArray);
+  // console.log('beepboop begins, heres the userarray', inputArray);
   for (let i = 0; i < inputArray.length; i++) {
     let element = i.toString();
     if (element.includes(3)) {
-      outputArray.push("Won't you be my neighbor?");
+      outputArray.push("Won't you be my neighbor, " + neighborName + "?");
       // console.log("element contains 3!", i);
     } else if (element.includes(2)) {
       // console.log("element contains a 2!", i);

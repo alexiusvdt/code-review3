@@ -1,4 +1,4 @@
-# Mr. Robogers' Neighborhood
+# Mr. Roboger's'Neighborhood
 
 #### By Alex Johnson
 
@@ -8,8 +8,7 @@
 
 * HTML
 * CSS
-* javascript
-<!-- * Bootstrap -->
+* JavaScript
 
 ## Description
 Won't you be my neighbor? Mr. Roboger replaces numbers containing 1, 2, or 3 according to a specific hierarchy: 
@@ -55,8 +54,6 @@ Describe validInput(countTo)
 Test: "users must enter a number for the program to work"
 Code: isNum (banana); isNum(193);
 Expected output: (false), (true)
-
-
 
 
 ## Known Bugs
