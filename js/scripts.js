@@ -27,16 +27,18 @@ function userInputArray(countTo) {
 } 
 
 function beepBooper (inputArray) {
-  console.log('beepboop begins');
-  for (let i = 0; i <= inputArray.length; i++) {
-    const element = i.toString();
-    if (element.includes(1)) {
-      outputArray.push("Beep!")
-      console.log("element matched!", i)
+  console.log('beepboop begins, heres the userarray', inputArray);
+  for (let i = 0; i < inputArray.length; i++) {
+    let element = i.toString();
+    if (element.includes(2)) {
+      outputArray.push("Boop!");
+      console.log("element contains 2!", i);
+    } else if (element.includes(1)) {
+      console.log("element contains a 1!", i);
+      outputArray.push("Beep!");
     } else {
       outputArray.push(element);
     }
-
   }
   return outputArray
 }

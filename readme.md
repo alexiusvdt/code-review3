@@ -31,10 +31,13 @@ Expected Output: [0, 1, 2, 3, 4, 5]
 
 Describe: beepBooper()
 
-Test: "It should replace inputs containing 1's with "beep"
+Test: "It should replace inputs containing 1's with "Beep!"
 Code: beepBooper(inputArray), inputArray = [0 through 11]
 Expected output: [0, "Beep!", 2, 3, 4, 5, 6, 7, 8, 9, "Beep!", "Beep!"]
 
+Test: "it should replace inputs containing 2's with "Boop!"
+Code: beepBooper(inputArray), inputArray = [0 through 12]
+Expected output: [0, "Beep!", "Boop!", 3, 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!"]
 
 
 
