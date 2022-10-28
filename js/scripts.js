@@ -18,7 +18,7 @@ function handleFormSubmission() {
       let span = document.createElement("span")
       document.getElementById("results-div").appendChild(span);
       span.id = "results-span";
-      p.append("ERROR: Sorry " + neighborName + ", Mr. Roboger can only handle input of integer values from 0-9. Please try again without text, whitespace, or special characters!");
+      p.append("ERROR: Sorry " + neighborName + ", Mr. Roboger can only handle input of positive integer values. Please try again without text, whitespace, or special characters!");
       document.getElementById("results-span").appendChild(p);
     }
 }
