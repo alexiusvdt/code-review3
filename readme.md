@@ -52,7 +52,7 @@ Expected output = [0, "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7,
 Describe validInput(countTo)
 
 Test: "users must enter a number for the program to work"
-Code: isNum (banana); isNum(193);
+Code: validInput(banana); validInput(193);
 Expected output: (false), (true)
 
 
