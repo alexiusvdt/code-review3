@@ -1,3 +1,41 @@
+//business 
+
+function validInput(countTo) {
+  let regexTest = /\D/g;
+    if (regexTest.test(countTo) === false) {
+      return true
+    } else {
+      return false
+    }
+}
+
+function userInputArray(countTo) {
+  let inputArray = [];
+  let indexLength = parseInt(countTo);
+    for (let i = 0; i <= indexLength; i++) {
+    inputArray.push(i);
+    }
+    return inputArray;
+} 
+
+function beepBooper (inputArray, neighborName) {
+  let outputArray = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    let element = i.toString();
+      if (element.includes(3)) {
+        outputArray.push("Won't you be my neighbor, " + neighborName + "?");
+      } else if (element.includes(2)) {
+        outputArray.push("Boop!");
+      } else if (element.includes(1)) {
+        outputArray.push("Beep!")
+      } else {
+        outputArray.push(element);
+      }
+    }
+  return outputArray
+}
+
+
 //ui 
 window.addEventListener("load", function() {
   document.querySelector("form#counter").addEventListener("submit", handleFormSubmission);
@@ -45,39 +83,3 @@ function resetResults() {
 }
 
 
-//business 
-
-function validInput(countTo) {
-  let regexTest = /\D/g;
-    if (regexTest.test(countTo) === false) {
-      return true
-    } else {
-      return false
-    }
-}
-
-function userInputArray(countTo) {
-  let inputArray = [];
-  let indexLength = parseInt(countTo);
-    for (let i = 0; i <= indexLength; i++) {
-    inputArray.push(i);
-    }
-    return inputArray;
-} 
-
-function beepBooper (inputArray, neighborName) {
-  let outputArray = [];
-  for (let i = 0; i < inputArray.length; i++) {
-    let element = i.toString();
-      if (element.includes(3)) {
-        outputArray.push("Won't you be my neighbor, " + neighborName + "?");
-      } else if (element.includes(2)) {
-        outputArray.push("Boop!");
-      } else if (element.includes(1)) {
-        outputArray.push("Beep!")
-      } else {
-        outputArray.push(element);
-      }
-    }
-  return outputArray
-}
