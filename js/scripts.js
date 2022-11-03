@@ -57,7 +57,7 @@ function validInput(countTo) {
 }
 
 function userInputArray(countTo) {
-  inputArray = [];
+  let inputArray = [];
   let indexLength = parseInt(countTo);
     for (let i = 0; i <= indexLength; i++) {
     inputArray.push(i);
